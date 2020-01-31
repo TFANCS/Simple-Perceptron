@@ -19,8 +19,6 @@ namespace SimplePerceptron1 {
                 trainingSets.Add(new TrainingSet(new double[2] { 1, 1 }, 1));
             }
 
-
-
             for (int i = 0; i < trainingSets.Count(); i++) {
                 if (trainingSets[i].Target == neuron.Learn(trainingSets[i])) {
                     Console.Write("O");
@@ -30,9 +28,6 @@ namespace SimplePerceptron1 {
                 }
                 Console.WriteLine("");
             }
-
-
-
 
         }
     }
@@ -59,7 +54,6 @@ namespace SimplePerceptron1 {
         private int actFunc = 0;  //0->step  1->sigmoid  2->ReLU
 
         public Neuron() {
-
         }
 
 
@@ -88,11 +82,9 @@ namespace SimplePerceptron1 {
             }
 
 
-
             Console.Write("    ");
             Console.Write(string.Format("{0,-3}", result));
             Console.Write("    ");
-
 
 
             switch (actFunc) {
@@ -112,20 +104,17 @@ namespace SimplePerceptron1 {
                     for (int i = 0; i < length; i++) {
                         weight[i] = weight[i] + (learningRate * (trainingSet.Target - result) * trainingSet.Features[i]);
                     }
-                    bias = bias + (learningRate * (trainingSet.Target - result) * SigmoidDeriv(result));
+                    bias = bias + (learningRate * (trainingSet.Target - result));
                     break;
             }
-
 
             return result;
         }
 
 
-
         public double BackPropagation() {
             return 0;
         }
-
 
 
         private double ReLU(double x) {
@@ -145,7 +134,7 @@ namespace SimplePerceptron1 {
         private double SigmoidDeriv(double y) {
             return y * (1 - y);
         }
-
+        
 
         private double Step(double x) {
             if (x >= 0) {
@@ -155,9 +144,6 @@ namespace SimplePerceptron1 {
                 return 0;
             }
         }
-
-
-
 
 
     }
