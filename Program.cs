@@ -21,7 +21,7 @@ namespace SimplePerceptron1 {
 
             for (int i = 0; i < trainingSets.Count(); i++) {
                 if (trainingSets[i].Target == neuron.Learn(trainingSets[i])) {
-                    Console.Write("O");
+                    Console.Write("v");
                 }
                 else {
                     Console.Write("X");
