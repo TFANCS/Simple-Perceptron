@@ -46,22 +46,16 @@ namespace SimplePerceptron1 {
 
 
 
-
     class Neuron {
         private double[] weight = new double[1024];
         private double bias = 0;
         private double learningRate = 0.9;
         private int actFunc = 0;  //0->step  1->sigmoid  2->ReLU
 
-        public Neuron() {
-        }
 
 
         public double Learn(TrainingSet trainingSet) {
             int length = trainingSet.Features.Length;
-
-
-
 
             double sum = 0;
             for (int i = 0; i < length; i++) {
@@ -109,11 +103,6 @@ namespace SimplePerceptron1 {
             }
 
             return result;
-        }
-
-
-        public double BackPropagation() {
-            return 0;
         }
 
 
